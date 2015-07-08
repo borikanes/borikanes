@@ -2,9 +2,8 @@
   "name": "borikanes",
   "description": "package for borikanes.io",
   "author": "One and only -- borikanes",
-  "version":"0.1",
+  "version":"0.0.1",
   "dependencies": {
     "express": "~4.9.0"
-  },
-  "engine": "node 0.12.6"
+  }
 }
