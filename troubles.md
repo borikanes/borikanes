@@ -41,4 +41,6 @@ If you get an warning like this
 
       nginx: [warn] conflicting server name "localhost" on 0.0.0.0:80, ignored
 
-go into `/etc/nginx/conf.d/` and open the default.conf and comment out the whole file. You should be good now
+go into `/etc/nginx/conf.d/` and open the default.conf file and comment out the whole file.
+
+Run `sudo nginx -s reload` and you should be good to go 
