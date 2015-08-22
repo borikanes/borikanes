@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/hello', function(req,res){
-  res.send({"message": "Hello World"})
+  res.send({"message": "Hello there, welcome to borikanes.me"})
 });
 
 app.listen(8080);
