@@ -1,6 +1,10 @@
 var express = require('express');
 
 var app = express();
+// set views directory
+var viewpath = __dirname + '/views/';
+app.set('view engine', 'ejs');
+app.use(require("express-ejs-layouts"));
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -18,6 +22,10 @@ app.use(function(req, res, next) {
 
 app.get('/hello', function(req,res){
   res.send({"message": "Hello there, welcome to borikanes.me"})
+});
+
+app.get('/', function(req, res){
+  res.render('index')
 });
 
 app.listen(8080);
