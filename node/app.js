@@ -1,10 +1,11 @@
 var express = require('express');
-
+var path = require('path');
 var app = express();
 // set views directory
 var viewpath = __dirname + '/views/';
 app.set('view engine', 'ejs');
 app.use(require("express-ejs-layouts"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
