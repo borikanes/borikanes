@@ -3,7 +3,8 @@
 # ps aux |grep -v "grep" | grep "node ./app.js"
 
 ps_output=`ps aux |grep -v "grep" | grep "node ./app.js" | awk '{print $6}'`
-echo $ps_output
-if [ $ps_output == "26568" ]; then
-  echo "it worked"
-fi
+screen_process=`screen -list | awk '{print $1}' | grep "tty"`
+echo $screen_process
+# if [ $ps_output == "26568" ]; then
+#   echo "it worked"
+# fi
