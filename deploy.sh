@@ -3,8 +3,10 @@
 # ps aux |grep -v "grep" | grep "node ./app.js"
 
 ps_output=`ps aux |grep -v "grep" | grep "node ./app.js" | awk '{print $6}'`
-screen_process=`screen -list | awk '{print $1}' | grep "tty"`
-echo $screen_process
-# if [ $ps_output == "26568" ]; then
-#   echo "it worked"
-# fi
+SCREEN_PROCESS=`screen -list | awk '{print $1}' | grep "tty"`
+
+if [ $SCREEN_PROCESS != "" ]; then
+  screen -X -S $SCREEN_PROCESS quit #kills screen process
+else
+  echo "no screen process is running currently"
+fi
