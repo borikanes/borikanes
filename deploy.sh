@@ -11,5 +11,6 @@ if [ ! $SCREEN_PROCESS ]; then
 else
   screen -X -S $SCREEN_PROCESS quit #kills screen process
   cd ~/Code/borikanes && git pull origin autodeploy-shellscript
+  cd ~/Code/borikanes/node && screen npm start
   # /home/pi/Code/borikanes
 fi
