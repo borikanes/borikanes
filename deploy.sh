@@ -8,7 +8,7 @@ SCREEN_PROCESS=`screen -list | awk '{print $1}' | grep "tty"`
 if [ $SCREEN_PROCESS ]; then
   screen -X -S $SCREEN_PROCESS quit #kills screen process
 else
-  echo "No screen sessions yet"
+  echo $(date +%A-%m-%d-%Y_%H-%M-%S) "No screen sessions yet" >> deploy_log
 fi
 # else
 #   echo "Screen was not running" >> /var/log/deploy_logs
