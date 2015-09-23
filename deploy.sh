@@ -5,8 +5,10 @@
 ps_output=`ps aux |grep -v "grep" | grep "node ./app.js" | awk '{print $6}'`
 SCREEN_PROCESS=`screen -list | awk '{print $1}' | grep "tty"`
 
-if [ $SCREEN_PROCESS != "" ]; then
+if [ $SCREEN_PROCESS ]; then
   screen -X -S $SCREEN_PROCESS quit #kills screen process
 else
-  echo "no screen process is running currently"
+  echo "No screen sessions yet"
 fi
+# else
+#   echo "Screen was not running" >> /var/log/deploy_logs
