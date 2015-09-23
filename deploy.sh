@@ -10,7 +10,6 @@ if [ ! $SCREEN_PROCESS ]; then
   exit
 else
   screen -X -S $SCREEN_PROCESS quit #kills screen process
-  cd ~/Code/borikanes && git pull origin autodeploy-shellscript
-  cd ~/Code/borikanes/node && screen npm start
-  # /home/pi/Code/borikanes
+  cd /home/pi/Code/borikanes && git pull origin autodeploy-shellscript
+  cd /home/pi/Code/borikanes/node && screen npm start
 fi
