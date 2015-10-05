@@ -30,7 +30,7 @@ app.get('/', function(req, res){
 });
 
 app.post('/githubwebhook', function (req, res) {
-  
+  res.send(req.body)
 });
 
 app.listen(8080);
