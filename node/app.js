@@ -29,4 +29,8 @@ app.get('/', function(req, res){
   res.render('index')
 });
 
+app.post('/githubwebhook', function (req, res) {
+  res.send(req.body)
+});
+
 app.listen(8080);
