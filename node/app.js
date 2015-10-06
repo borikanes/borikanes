@@ -1,7 +1,8 @@
-var express = require('express');
-var path = require('path');
+var express = require('express')
+ , path = require('path')
+ , bodyParser = require('body-parser');
+
 var app = express();
-var bodyParser = require('body-parser');
 // set views directory
 var viewpath = __dirname + '/views/';
 app.set('view engine', 'ejs');
@@ -34,7 +35,6 @@ app.get('/', function(req, res){
 
 app.post('/githubwebhook', function (req, res) {
   res.send(req.body)
-  console.log("--------->"+JSON.stringify(req.body))
 });
 
 app.listen(8080);
