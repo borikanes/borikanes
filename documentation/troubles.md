@@ -43,4 +43,7 @@ If you get an warning like this
 
 go into `/etc/nginx/conf.d/` and open the default.conf file and comment out the whole file.
 
-Run `sudo nginx -s reload` and you should be good to go 
+Run `sudo nginx -s reload` and you should be good to go
+
+### GitHub Webhook errors
+Using GitHub's Webhook seem to be slow. I basically had to create a route that data will be pushed to.  When that route is called with the data it takes the data and saves it locally in a file that i will then parse.  The file seems to be there but after a few minutes which i think is really weird.
