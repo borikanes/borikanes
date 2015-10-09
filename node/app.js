@@ -1,11 +1,18 @@
-var express = require('express');
-var path = require('path');
+var express = require('express')
+ , path = require('path')
+ , bodyParser = require('body-parser')
+, fs = require('fs');
+
 var app = express();
+
 // set views directory
 var viewpath = __dirname + '/views/';
 app.set('view engine', 'ejs');
 app.use(require("express-ejs-layouts"));
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: false })); // for parsing application/x-www-form-urlencoded
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -30,7 +37,17 @@ app.get('/', function(req, res){
 });
 
 app.post('/githubwebhook', function (req, res) {
-  res.send(req.body)
+  //res.send(req.body)
+  //console.log(req.body['hook']['events'][0]);
+  fs.writeFile("/home/pi/githubwebhooks/test.txt", req.body, function(err) {
+    if (err) {
+        return err;
+    }
+    console.log("File wrote by the way");
+  });
+  // if (req.body['hook']['events'].indexOf('push') != -1){
+  //   console.log("call shell script here");
+  // }
 });
 
 app.listen(8080);
