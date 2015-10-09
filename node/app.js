@@ -39,7 +39,9 @@ app.get('/', function(req, res){
 app.post('/githubwebhook', function (req, res) {
   //res.send(req.body)
   //console.log(req.body['hook']['events'][0]);
-  fs.writeFile("/home/pi/githubwebhooks/test.txt", req.body, function(err) {
+  // /home/pi/githubwebhooks/test.txt
+  // /Users/vhh167/Code/borikanes/test.txt
+  fs.writeFile("/home/pi/githubwebhooks/test.txt", JSON.stringify(req.body), function(err) {
     if (err) {
         return err;
     }
