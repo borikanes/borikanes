@@ -39,9 +39,15 @@ app.get('/', function(req, res){
 app.post('/githubwebhook', function (req, res) {
   //res.send(req.body)
   //console.log(req.body['hook']['events'][0]);
-  if (req.body['hook']['events'].indexOf('push') != -1){
-    console.log("call shell script here");
-  }
+  fs.writeFile("/home/pi/githubwebhooks/test.txt", req.body, function(err) {
+    if (err) {
+        return err;
+    }
+    console.log("File wrote by the way");
+  });
+  // if (req.body['hook']['events'].indexOf('push') != -1){
+  //   console.log("call shell script here");
+  // }
 });
 
 app.listen(8080);
