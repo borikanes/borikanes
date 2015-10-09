@@ -1,6 +1,7 @@
 var express = require('express')
  , path = require('path')
- , bodyParser = require('body-parser');
+ , bodyParser = require('body-parser')
+, fs = require('fs');
 
 var app = express();
 // set views directory
@@ -34,7 +35,13 @@ app.get('/', function(req, res){
 });
 
 app.post('/githubwebhook', function (req, res) {
-  res.send(req.body)
+  //res.send(req.body)
+  fs.writeFile("/Users/vhh167/Code/borikanes/test.txt", req.body, function(err) {
+    if(err) {
+        return console.log(err);
+    }
+    console.log("File wrote by the way");
+  });
 });
 
 app.listen(8080);
