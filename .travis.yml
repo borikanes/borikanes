@@ -1,0 +1,5 @@
+language: node_js, python
+node_js:
+  - "0.10.25"
+python:
+  - "3.2.3"
