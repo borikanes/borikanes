@@ -4,6 +4,7 @@ node_js:
 before_install:
   - npm install -g npm
 before_script:
-  - cd node && npm install
+  - cd node
+  - npm install
 script:
   - npm test
