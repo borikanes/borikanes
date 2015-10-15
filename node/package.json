@@ -4,12 +4,16 @@
   "author": "One and only -- borikanes",
   "version":"0.0.1",
   "scripts" : {
-    "start" : "node ./app.js"
+    "start" : "node ./app.js",
+    "test" : "mocha --recursive"
   },
   "dependencies": {
     "express": "~4.9.0",
     "ejs": "*",
     "body-parser": "~1.8.1",
+    "expect.js":"*",
+    "superagent":"1.0.0",
+    "mocha": "*",
     "express-ejs-layouts": "*"
   }
 }
