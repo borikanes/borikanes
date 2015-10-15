@@ -8,6 +8,7 @@
     "test" : "mocha --recursive"
   },
   "dependencies": {
+    "are-we-there-yet" : "*",
     "express": "~4.9.0",
     "ejs": "*",
     "body-parser": "~1.8.1",
