@@ -1,5 +1,11 @@
-language: node_js, python
+language: node_js
 node_js:
-  - "0.10.25"
-python:
-  - "3.2.3"
+  - "0.10"
+before_install:
+  - npm install -g npm
+before_script:
+  - cd node
+  - npm install -g are-we-there-yet
+  - npm install
+script:
+  - npm test
