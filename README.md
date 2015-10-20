@@ -1,5 +1,7 @@
 Repo for borikanes.me
 
+[![Build Status](https://travis-ci.org/borikanes/borikanes.svg)](https://travis-ci.org/borikanes/borikanes)
+
 ## Stack
 - Nginx
 - Front end: html, css, bootstrap
