@@ -6,5 +6,5 @@ before_install:
 # before_script:
 #   - cd node
 #   - npm install
-# script:
-#   - npm test
+script:
+  - npm test
