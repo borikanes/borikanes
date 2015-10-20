@@ -5,8 +5,9 @@ node_js:
   - "0.12"
 before_install:
   - npm install -g npm
-# before_script:
-#   - cd node
-#   - npm install
-script:
-  - npm test
+before_script:
+  - cd node
+  - npm install -g are-we-there-yet
+  - npm install
+# script:
+#   - npm test
