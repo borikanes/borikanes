@@ -9,4 +9,5 @@ Repo for borikanes.me
 - DB: None yet
 
 ## CICD plan
-I completely switched to Travis for CI. 
+I completely switched to Travis for CI.
+don't have plans for CD yet.
