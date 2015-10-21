@@ -1,6 +1,6 @@
 Repo for borikanes.me
 
-[![Build Status](https://travis-ci.org/borikanes/borikanes.svg)](https://travis-ci.org/borikanes/borikanes)
+[![Build Status](https://travis-ci.org/borikanes/borikanes.svg?branch=master)](https://travis-ci.org/borikanes/borikanes)
 
 ## Stack
 - Nginx
@@ -10,6 +10,5 @@ Repo for borikanes.me
 
 ## CICD plan
 I completely switched to Travis for CI.
-don't have plans for CD yet.
-
-This is to have Travis pull in master branch.....hope this works
+<<<<<<< HEAD
+don't have plans for CD yet
