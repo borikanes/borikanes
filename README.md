@@ -10,4 +10,4 @@ Repo for borikanes.me
 
 ## CICD plan
 I completely switched to Travis for CI.
-don't have plans for CD yet.
+don't have plans for CD yet
