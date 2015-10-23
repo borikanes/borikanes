@@ -18,6 +18,7 @@ describe('**************** Node tests ***************', function() {
     it('check /hello exists', function(done){
       request.get('localhost:8080/hello').end(function(err, res){
         expect(res).to.exist;
+        console.log(JSON.stringify(res));
         expect(res.body).to.not.contain("Cannot GET");
         expect(res.body.message).to.contain("welcome");
         done();
