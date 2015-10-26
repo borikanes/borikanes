@@ -8,4 +8,7 @@ before_script:
   - npm install -g are-we-there-yet
   - npm install
 script:
+  - cd node
   - npm test
+notifications:
+  email: false
