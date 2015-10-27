@@ -7,10 +7,10 @@ before_script:
   - cd node
   - npm install -g are-we-there-yet
   - npm install
-script:
-  - cd node
   - npm start &
   - sleep 5
+script:
+  - cd node
   - npm test
 notifications:
   email: false
