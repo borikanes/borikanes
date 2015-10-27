@@ -10,7 +10,6 @@ before_script:
   - npm start &
   - sleep 5
 script:
-  - cd node
   - npm test
 notifications:
   email: false
