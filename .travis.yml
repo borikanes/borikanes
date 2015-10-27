@@ -9,6 +9,8 @@ before_script:
   - npm install
 script:
   - cd node
+  - npm start &
+  - sleep 5
   - npm test
 notifications:
   email: false
