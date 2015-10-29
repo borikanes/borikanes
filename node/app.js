@@ -47,6 +47,7 @@ app.post('/githubwebhook', function (req, res) {
     }
     console.log("File wrote by the way");
   });
+  //Just testing the webhooks.....
   // if (req.body['hook']['events'].indexOf('push') != -1){
   //   console.log("call shell script here");
   // }
