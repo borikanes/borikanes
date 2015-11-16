@@ -15,19 +15,31 @@
   padding-left: 0px;
 }
 
-  .icon:before {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-transform: none !important;
-  }
+.icon:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+}
 
   /*Don't know what this does*/
   .icon > .label {
     display: none;
   }
+
+#center-section {
+  min-height: 100%;
+  min-height: 75vh;
+  min-width: 80%;
+  min-width: 60vw;
+  display: flex;
+}
+
+#center-section p {
+  
+}
 
 #icons {
 	-moz-animation: icons 1s 2.25s forwards;
