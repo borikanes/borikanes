@@ -35,10 +35,28 @@
   min-width: 80%;
   min-width: 60vw;
   display: flex;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
-#center-section p {
+#center-section #detail-center-section p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+#center-section #name-center-section h1 {
+  font-size: 60px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  height: 80px;
+  margin: 0px auto;
+  overflow: hidden;
+  clear: both;
 }
 
 #icons {
@@ -227,8 +245,4 @@
 
 #icons nav a span {
 	display: none;
-}
-
-#center-section p {
-  
 }
