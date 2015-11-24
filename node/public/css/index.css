@@ -7,12 +7,8 @@
 }
 
 .container {
-  /*Below four lines makes the list of social media icons, responsive*/
-  min-height: 100%;
-  min-height: 87vh;
-  display: flex;
-  align-items: center;
-  padding-left: 0px;
+  float: left;
+  margin-top: -7em;
 }
 
 .icon:before {
@@ -29,15 +25,14 @@
     display: none;
   }
 
+
 #center-section {
   min-height: 100%;
-  min-height: 75vh;
   min-width: 80%;
-  min-width: 60vw;
-  display: flex;
   width: 800px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 1em;
   text-align: center;
 }
 
@@ -53,10 +48,6 @@
   font-weight: bold;
   margin-left: auto;
   margin-right: auto;
-  height: 80px;
-  margin: 0px auto;
-  overflow: hidden;
-  clear: both;
 }
 
 #icons {
