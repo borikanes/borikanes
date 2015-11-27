@@ -7,12 +7,21 @@ describe('**************** Flask tests ***************', function() {
     done();
   });
 
-  describe('Just sanity check to see that root path exists', function(){
+  describe('Checking the resume route isn\'t missing', function(){
     it('check resume route exists', function(done){
       request.get('localhost:5000/resume').end(function(err, res){
         expect(res).to.exist;
         done();
+      });
     });
   });
-});
+
+  describe('Checking the flask endpoint', function(){
+    it('check resume route exists', function(done){
+      request.get('localhost:5000/flask').end(function(err, res){
+        expect(res).to.exist;
+        done();
+      });
+    });
+  });
 });
