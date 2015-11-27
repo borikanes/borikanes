@@ -45,6 +45,9 @@ app.post('/githubwebhook', function (req, res) {
     if (err) {
         return err;
     }
+    else{
+      res.sendStatus(200);
+    }
     console.log("File wrote by the way");
   });
   // if (req.body['hook']['events'].indexOf('push') != -1){
