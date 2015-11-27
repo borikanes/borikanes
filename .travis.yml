@@ -10,6 +10,7 @@ before_script:
   - npm start &
   - sleep 5
   - python3 ../flask/flask-endpoints.py &
+  - sleep 2
 script:
   - npm test
 notifications:
