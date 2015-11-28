@@ -38,22 +38,13 @@ app.get('/', function(req, res){
 
 app.post('/githubwebhook', function (req, res) {
   //res.send(req.body)
-  //console.log(req.body['hook']['events'][0]);
+  res.sendStatus(200);
+  if(req.body['action'] == 'closed'){
+    // Run script here
+
+  }
   // /home/pi/githubwebhooks/test.txt
   // /Users/vhh167/Code/borikanes/test.txt
-  fs.writeFile("/home/pi/githubwebhooks/test.txt", JSON.stringify(req.body), function(err) {
-    if (err) {
-        return err;
-    }
-    else{
-      res.sendStatus(200);
-    }
-    console.log("File wrote by the way");
-  });
-  //Just testing the webhooks.....ok made some modification
-  // if (req.body['hook']['events'].indexOf('push') != -1){
-  //   console.log("call shell script here");
-  // }
 });
 
 app.listen(8080);
