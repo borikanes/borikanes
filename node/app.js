@@ -36,15 +36,13 @@ app.get('/', function(req, res){
   res.render('index')
 });
 
-app.post('/githubwebhook', function (req, res) {
-  //res.send(req.body)
+app.post('/githubwebhook', function (req, res){
   res.sendStatus(200);
-  if(req.body['action'] == 'closed'){
+  var payload_body = req.body;
+  if(payload_body['action'] == 'closed' && payload_body['pull_request']['merged_at'] != null){
     // Run script here
-
+    
   }
-  // /home/pi/githubwebhooks/test.txt
-  // /Users/vhh167/Code/borikanes/test.txt
 });
 
 app.listen(8080);
