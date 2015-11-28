@@ -3,13 +3,21 @@
 # ps aux |grep -v "grep" | grep "node ./app.js"
 
 ps_output=`ps aux |grep -v "grep" | grep "node ./app.js" | awk '{print $6}'`
-SCREEN_PROCESS=`screen -list | awk '{print $1}' | grep "tty"`
+SCREEN_PROCESS=`screen -list | awk '{print $1}' | grep "\.\."`
+FIRST_SCREEN_PROCESS=`screen -list | awk '{print $1}' | grep "\.\."  | sed -n 1p` # gets the first screen process
+SECOND_SCREEN_PROCESS=`screen -list | awk '{print $1}' | grep "\.\."  | sed -n 2p` # gets second screen process
 
-if [ ! $SCREEN_PROCESS ]; then
+if [ ! "$SCREEN_PROCESS" ]; then
   echo $(date +%A-%m-%d-%Y_%H-%M-%S) "No screen sessions" >> deploy_log
   exit
 else
-  screen -X -S $SCREEN_PROCESS quit #kills screen process
-  cd /home/pi/Code/borikanes && git pull origin master
-  cd /home/pi/Code/borikanes/node && screen npm start
+  if [ "$FIRST_SCREEN_PROCESS" ]; then
+    screen -X -S $FIRST_SCREEN_PROCESS quit #kills first screen process
+  fi
+  if [ "$SECOND_SCREEN_PROCESS" ]; then
+    screen -X -S $SECOND_SCREEN_PROCESS quit #kills second screen process
+  fi
+  # cd /home/pi/Code/borikanes && git pull origin master
+  # cd /home/pi/Code/borikanes/node && screen npm start
+  echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Deploy Succesfull!(Not really)" >> deploy_log
 fi
