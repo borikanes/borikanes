@@ -19,5 +19,5 @@ else
   fi
   # cd /home/pi/Code/borikanes && git pull origin master
   # cd /home/pi/Code/borikanes/node && screen npm start
-  echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Deploy Succesfull!" >> deploy_log
+  echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Deploy Succesfull!(Not really)" >> deploy_log
 fi
