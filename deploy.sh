@@ -17,6 +17,7 @@ else
   if [ "$SECOND_SCREEN_PROCESS" ]; then
     screen -X -S $SECOND_SCREEN_PROCESS quit #kills second screen process
   fi
+  echo "Got through" >> deploy_log
   cd /home/pi/Code/borikanes && git pull origin master
   cd /home/pi/Code/borikanes/node && screen -d -m npm start
   cd /home/pi/Code/borikanes/flask && screen -d -m python3.4 flask_endpoints.py
