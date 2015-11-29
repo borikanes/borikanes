@@ -11,11 +11,14 @@ if [ ! "$SCREEN_PROCESS" ]; then
   echo $(date +%A-%m-%d-%Y_%H-%M-%S) "No screen sessions" >> deploy_log
   exit
 else
+  echo "Else statement" >> deploy_log
   if [ "$FIRST_SCREEN_PROCESS" ]; then
     screen -X -S $FIRST_SCREEN_PROCESS quit #kills first screen process
+    echo "Killed first screen" >> deploy_log
   fi
   if [ "$SECOND_SCREEN_PROCESS" ]; then
     screen -X -S $SECOND_SCREEN_PROCESS quit #kills second screen process
+    echo "Killed second screen" >> deploy_log
   fi
   echo "Got through" >> deploy_log
   cd /home/pi/Code/borikanes && git pull origin master
