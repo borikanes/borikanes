@@ -12,6 +12,7 @@ if [ ! "$SCREEN_PROCESS" ]; then
   exit
 else
   echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Else statement" >> /home/pi/Code/borikanes/deploy_log
+  cd /home/pi/Code/borikanes && git pull origin master
   if [ "$FIRST_SCREEN_PROCESS" ]; then
     screen -X -S $FIRST_SCREEN_PROCESS quit #kills first screen process
     echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Killed first screen" >> /home/pi/Code/borikanes/deploy_log
@@ -21,7 +22,6 @@ else
     echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Killed second screen" >> /home/pi/Code/borikanes/deploy_log
   fi
   echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Got through" >> /home/pi/Code/borikanes/deploy_log
-  cd /home/pi/Code/borikanes && git pull origin master
   cd /home/pi/Code/borikanes/node && screen -d -m npm start
   cd /home/pi/Code/borikanes/flask && screen -d -m python3.4 flask_endpoints.py
   echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Deploy Succesfull!" >> /home/pi/Code/borikanes/deploy_log
