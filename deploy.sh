@@ -21,7 +21,7 @@ else
     screen -X -S $SECOND_SCREEN_PROCESS quit #kills second screen process
     echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Killed second screen" >> /home/pi/Code/borikanes/deploy_log
   fi
-  if [ "$FIRST_SCREEN_PROCESS" && "$SECOND_SCREEN_PROCESS"] then
+  if [ "$FIRST_SCREEN_PROCESS" && "$SECOND_SCREEN_PROCESS" ]; then
     echo $(date +%A-%m-%d-%Y_%H-%M-%S) "WE ARE GOOD TO GO" >> /home/pi/Code/borikanes/deploy_log
   fi
   echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Got through" >> /home/pi/Code/borikanes/deploy_log
