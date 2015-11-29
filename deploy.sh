@@ -23,9 +23,5 @@ else
     cd /home/pi/Code/borikanes/node && screen -d -m npm start
     cd /home/pi/Code/borikanes/flask && screen -d -m python3.4 flask_endpoints.py
   fi
-  if [ "$FIRST_SCREEN_PROCESS" && "$SECOND_SCREEN_PROCESS" ]; then
-    echo $(date +%A-%m-%d-%Y_%H-%M-%S) "WE ARE GOOD TO GO" >> /home/pi/Code/borikanes/deploy_log
-  fi
-  echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Got through" >> /home/pi/Code/borikanes/deploy_log
   echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Deploy Succesfull!" >> /home/pi/Code/borikanes/deploy_log
 fi
