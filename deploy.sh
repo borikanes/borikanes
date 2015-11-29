@@ -9,6 +9,10 @@ SECOND_SCREEN_PROCESS=`screen -list | awk '{print $1}' | grep "\.\."  | sed -n 2
 
 if [ ! "$SCREEN_PROCESS" ]; then
   echo $(date +%A-%m-%d-%Y_%H-%M-%S) "No screen sessions" >> /home/pi/Code/borikanes/deploy_log
+  cd /home/pi/Code/borikanes && git pull origin master
+  cd /home/pi/Code/borikanes/node && screen -d -m npm start
+  cd /home/pi/Code/borikanes/flask && screen -d -m python3.4 flask_endpoints.py
+  echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Deploy Succesfull!" >> /home/pi/Code/borikanes/deploy_log
   exit
 else
   echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Else statement" >> /home/pi/Code/borikanes/deploy_log
