@@ -13,4 +13,5 @@ I completely switched to Travis for CI.
 don't have plans for CD yet
 
 ## GitHub webhooks
-I am currently writing this to test my github webhooks
+It finally worked.
+Testing my auto deploy mechanism now...
