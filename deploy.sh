@@ -11,7 +11,8 @@ if [ ! "$SCREEN_PROCESS" ]; then
   echo $(date +%A-%m-%d-%Y_%H-%M-%S) "No screen sessions" >> /home/pi/Code/borikanes/deploy_log
   exit
 else
-  python3.4 deploy_assist.py
+  python3.4 /home/pi/Code/borikanes/deploy_assist.py
+  echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Should have deployed" >> /home/pi/Code/borikanes/deploy_log
   # echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Else statement" >> /home/pi/Code/borikanes/deploy_log
   # cd /home/pi/Code/borikanes && git pull origin master
   # if [ "$FIRST_SCREEN_PROCESS" ]; then
