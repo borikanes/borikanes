@@ -10,8 +10,4 @@ Repo for borikanes.me
 
 ## CICD plan
 I completely switched to Travis for CI.
-don't have plans for CD yet
-
-## GitHub webhooks
-It finally worked.
-Testing my auto deploy mechanism now...
+And used GitHub webhooks, shell scripting and python for my continuous deployment shenanigan
