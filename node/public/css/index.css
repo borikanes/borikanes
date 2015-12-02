@@ -50,6 +50,60 @@
   margin-right: auto;
 }
 
+@media screen and (max-width: 620px) {
+    #center-section #name-center-section h1 {
+      font-size: 35px;
+      font-weight: bold;
+      width: 200px;
+      margin-left: 180px;
+      margin-right: auto;
+    }
+
+    #center-section #detail-center-section p {
+      font-size: 20px;
+      font-weight: bold;
+      width: 200px;
+      margin-left: 190px;
+      margin-right: 100px;
+      margin-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #center-section #name-center-section h1 {
+      font-size: 35px;
+      font-weight: bold;
+      width: 200px;
+      margin-left: 120px;
+      margin-right: auto;
+    }
+
+    #center-section #detail-center-section p {
+      font-size: 15px;
+      font-weight: bold;
+      width: 160px;
+      margin-left: 150px;
+      margin-right: 100px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #center-section #name-center-section h1 {
+      font-size: 30px;
+      font-weight: bold;
+      width: 200px;
+      margin-left: 100px;
+      margin-right: auto;
+    }
+
+    #center-section #detail-center-section p {
+      font-size: 15px;
+      font-weight: bold;
+      width: 150px;
+      margin-left: 110px;
+      margin-right: 100px;
+    }
+}
 #icons {
 	-moz-animation: icons 1s 2.25s forwards;
 	-webkit-animation: icons 1s 2.25s forwards;

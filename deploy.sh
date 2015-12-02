@@ -3,13 +3,27 @@
 # ps aux |grep -v "grep" | grep "node ./app.js"
 
 ps_output=`ps aux |grep -v "grep" | grep "node ./app.js" | awk '{print $6}'`
-SCREEN_PROCESS=`screen -list | awk '{print $1}' | grep "tty"`
+SCREEN_PROCESS=`screen -list | awk '{print $1}' | grep "\.\."`
+FIRST_SCREEN_PROCESS=`screen -list | awk '{print $1}' | grep "\.\."  | sed -n 1p` # gets the first screen process
+SECOND_SCREEN_PROCESS=`screen -list | awk '{print $1}' | grep "\.\."  | sed -n 2p` # gets second screen process
 
-if [ ! $SCREEN_PROCESS ]; then
-  echo $(date +%A-%m-%d-%Y_%H-%M-%S) "No screen sessions" >> deploy_log
+if [ ! "$SCREEN_PROCESS" ]; then
+  echo $(date +%A-%m-%d-%Y_%H-%M-%S) "No screen sessions" >> /home/pi/Code/borikanes/deploy_log
   exit
 else
-  screen -X -S $SCREEN_PROCESS quit #kills screen process
-  cd /home/pi/Code/borikanes && git pull origin master
-  cd /home/pi/Code/borikanes/node && screen npm start
+  python3.4 /home/pi/Code/borikanes/deploy_assist.py
+  echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Should have deployed" >> /home/pi/Code/borikanes/deploy_log
+  # echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Else statement" >> /home/pi/Code/borikanes/deploy_log
+  # cd /home/pi/Code/borikanes && git pull origin master
+  # if [ "$FIRST_SCREEN_PROCESS" ]; then
+  #   screen -X -S $FIRST_SCREEN_PROCESS quit #kills first screen process
+  #   echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Killed first screen" >> /home/pi/Code/borikanes/deploy_log
+  # fi
+  # if [ "$SECOND_SCREEN_PROCESS" ]; then
+  #   screen -X -S $SECOND_SCREEN_PROCESS quit #kills second screen process
+  #   echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Killed second screen" >> /home/pi/Code/borikanes/deploy_log
+  #   cd /home/pi/Code/borikanes/node && screen -d -m npm start
+  #   cd /home/pi/Code/borikanes/flask && screen -d -m python3.4 flask_endpoints.py
+  # fi
+  # echo $(date +%A-%m-%d-%Y_%H-%M-%S) "Deploy Succesfull!" >> /home/pi/Code/borikanes/deploy_log
 fi

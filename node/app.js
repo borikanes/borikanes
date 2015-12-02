@@ -1,7 +1,8 @@
 var express = require('express')
  , path = require('path')
  , bodyParser = require('body-parser')
-, fs = require('fs');
+ , fs = require('fs');
+ var exec = require('child_process').exec;
 
 var app = express();
 
@@ -36,20 +37,17 @@ app.get('/', function(req, res){
   res.render('index')
 });
 
-app.post('/githubwebhook', function (req, res) {
-  //res.send(req.body)
-  //console.log(req.body['hook']['events'][0]);
-  // /home/pi/githubwebhooks/test.txt
-  // /Users/vhh167/Code/borikanes/test.txt
-  fs.writeFile("/home/pi/githubwebhooks/test.txt", JSON.stringify(req.body), function(err) {
-    if (err) {
-        return err;
-    }
-    console.log("File wrote by the way");
-  });
-  // if (req.body['hook']['events'].indexOf('push') != -1){
-  //   console.log("call shell script here");
-  // }
+app.post('/githubwebhook', function (req, res){
+  res.sendStatus(200);
+  var payload_body = req.body;
+  if(payload_body['action'] == 'closed' && payload_body['pull_request']['merged_at'] != null){
+    // Run script here
+    exec('sh ../deploy.sh' ,function(err,stdout,stderr){
+      if(err !== null){
+        console.log('Exec error in deploy: '+err);
+      }
+    });
+  }
 });
 
 app.listen(8080);
