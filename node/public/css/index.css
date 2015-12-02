@@ -1,3 +1,293 @@
 .top-header h1 {
   margin-top: 100px;
 }
+.icon {
+  text-decoration: none;
+  position: relative;
+}
+
+.container {
+  float: left;
+  margin-top: -7em;
+}
+
+.icon:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+}
+
+  /*Don't know what this does*/
+  .icon > .label {
+    display: none;
+  }
+
+
+#center-section {
+  min-height: 100%;
+  min-width: 80%;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1em;
+  text-align: center;
+}
+
+#center-section #detail-center-section p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#center-section #name-center-section h1 {
+  font-size: 60px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 620px) {
+    #center-section #name-center-section h1 {
+      font-size: 35px;
+      font-weight: bold;
+      width: 200px;
+      margin-left: 180px;
+      margin-right: auto;
+    }
+
+    #center-section #detail-center-section p {
+      font-size: 20px;
+      font-weight: bold;
+      width: 200px;
+      margin-left: 190px;
+      margin-right: 100px;
+      margin-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #center-section #name-center-section h1 {
+      font-size: 35px;
+      font-weight: bold;
+      width: 200px;
+      margin-left: 120px;
+      margin-right: auto;
+    }
+
+    #center-section #detail-center-section p {
+      font-size: 15px;
+      font-weight: bold;
+      width: 160px;
+      margin-left: 150px;
+      margin-right: 100px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #center-section #name-center-section h1 {
+      font-size: 30px;
+      font-weight: bold;
+      width: 200px;
+      margin-left: 100px;
+      margin-right: auto;
+    }
+
+    #center-section #detail-center-section p {
+      font-size: 15px;
+      font-weight: bold;
+      width: 150px;
+      margin-left: 110px;
+      margin-right: 100px;
+    }
+}
+#icons {
+	-moz-animation: icons 1s 2.25s forwards;
+	-webkit-animation: icons 1s 2.25s forwards;
+	-ms-animation: icons 1s 2.25s forwards;
+	animation: icons 1s 2.25s forwards;
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	cursor: default;
+	display: inline-block;
+	opacity: 1;
+	position: relative;
+	text-align: center;
+	top: -1em;
+	vertical-align: middle;
+	width: 90%;
+}
+
+#icons h1 {
+	font-size: 4.35em;
+	font-weight: 900;
+	letter-spacing: -0.035em;
+	line-height: 1em;
+}
+
+#icons li {
+	color: black;
+}
+
+#icons p {
+	font-size: 1.25em;
+	margin: 0.75em 0 0.25em 0;
+	opacity: 0.75;
+}
+
+#icons nav {
+	width: 100px;
+}
+
+#icons nav li {
+	-moz-animation: nav-icons 0.5s ease-in-out forwards;
+	-webkit-animation: nav-icons 0.5s ease-in-out forwards;
+	-ms-animation: nav-icons 0.5s ease-in-out forwards;
+	animation: nav-icons 0.5s ease-in-out forwards;
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	display: inline-block;
+	height: 5.35em;
+	line-height: 5.885em;
+	opacity: 1; /*Default was Zero*/
+	position: relative;
+	top: 0;
+	width: 5.35em;
+	color: #000;
+}
+
+#icons nav ul{
+ padding-left: 0px
+}
+#icons nav li:nth-child(1) {
+	-moz-animation-delay: 2.5s;
+	-webkit-animation-delay: 2.5s;
+	-ms-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+
+#icons nav li:nth-child(2) {
+	-moz-animation-delay: 2.75s;
+	-webkit-animation-delay: 2.75s;
+	-ms-animation-delay: 2.75s;
+	animation-delay: 2.75s;
+}
+
+#icons nav li:nth-child(3) {
+	-moz-animation-delay: 3s;
+	-webkit-animation-delay: 3s;
+	-ms-animation-delay: 3s;
+	animation-delay: 3s;
+}
+
+#icons nav li:nth-child(4) {
+	-moz-animation-delay: 3.25s;
+	-webkit-animation-delay: 3.25s;
+	-ms-animation-delay: 3.25s;
+	animation-delay: 3.25s;
+}
+
+#icons nav li:nth-child(5) {
+	-moz-animation-delay: 3.5s;
+	-webkit-animation-delay: 3.5s;
+	-ms-animation-delay: 3.5s;
+	animation-delay: 3.5s;
+}
+
+#icons nav li:nth-child(6) {
+	-moz-animation-delay: 3.75s;
+	-webkit-animation-delay: 3.75s;
+	-ms-animation-delay: 3.75s;
+	animation-delay: 3.75s;
+}
+
+#icons nav li:nth-child(7) {
+	-moz-animation-delay: 4s;
+	-webkit-animation-delay: 4s;
+	-ms-animation-delay: 4s;
+	animation-delay: 4s;
+}
+
+#icons nav li:nth-child(8) {
+	-moz-animation-delay: 4.25s;
+	-webkit-animation-delay: 4.25s;
+	-ms-animation-delay: 4.25s;
+	animation-delay: 4.25s;
+}
+
+#icons nav li:nth-child(9) {
+	-moz-animation-delay: 4.5s;
+	-webkit-animation-delay: 4.5s;
+	-ms-animation-delay: 4.5s;
+	animation-delay: 4.5s;
+}
+
+#icons nav li:nth-child(10) {
+	-moz-animation-delay: 4.75s;
+	-webkit-animation-delay: 4.75s;
+	-ms-animation-delay: 4.75s;
+	animation-delay: 4.75s;
+}
+
+#icons nav a {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	border: 0;
+	display: inline-block;
+}
+
+#icons nav a:before {
+	-moz-transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	border-radius: 100%;
+	border: solid 1px #3a393a;
+	display: block;
+	font-size: 1.75em;
+	height: 2.5em;
+	line-height: 2.5em;
+	position: relative;
+	text-align: center;
+	top: 0;
+	width: 2.5em;
+}
+
+#icons nav a:hover {
+	font-size: 1.1em;
+}
+
+#icons nav a:hover:before {
+	border: solid 1px #a3a1a3;
+	background-color: rgb(0, 0, 3);
+	color: #fff;
+}
+
+#icons nav a:active {
+	font-size: 0.95em;
+	background: none;
+}
+
+#icons nav a:active:before {
+	background-color: rgb(0, 0, 3);
+	color: #fff;
+}
+
+#icons nav a span {
+	display: none;
+}
