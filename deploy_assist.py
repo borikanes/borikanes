@@ -14,10 +14,10 @@ os.system("echo $(date +%A-%m-%d-%Y_%H-%M-%S) \"Else statement\" >> $BORIKANES_H
 os.system("cd $BORIKANES_HOME && git pull origin master")
 
 if(first_process):
-    os.system("screen -X -S $FIRST_SCREEN_PROCESS quit")
+    os.system("screen -X -S "+first_process+" quit")
     os.system("echo $(date +%A-%m-%d-%Y_%H-%M-%S) \"Killed first screen\" >> $BORIKANES_HOME/deploy_log")
 if(second_process):
-    os.system("screen -X -S $SECOND_SCREEN_PROCESS quit")
+    os.system("screen -X -S "+second_process+" quit")
     os.system("echo $(date +%A-%m-%d-%Y_%H-%M-%S) \"Killed second screen\" >> $BORIKANES_HOME/deploy_log")
 
 os.system("cd $BORIKANES_HOME/node && screen -d -m npm start && cd $BORIKANES_HOME/flask && screen -d -m python3.4 flask_endpoints.py")
