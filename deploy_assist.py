@@ -13,11 +13,14 @@ screen2 = str(second_process.read()).rstrip('\n')
 os.system("echo $(date +%A-%m-%d-%Y_%H-%M-%S) \"Else statement\" >> $BORIKANES_HOME/deploy_log")
 os.system("cd $BORIKANES_HOME && git pull origin master")
 
+screen1_quit = "screen -X -S "+first_process+" quit"
+screen2_quit = "screen -X -S "+second_process+" quit"
+
 if(first_process):
-    os.system("screen -X -S "+first_process+" quit")
+    os.system(screen1_quit)
     os.system("echo $(date +%A-%m-%d-%Y_%H-%M-%S) \"Killed first screen\" >> $BORIKANES_HOME/deploy_log")
 if(second_process):
-    os.system("screen -X -S "+second_process+" quit")
+    os.system(screen2_quit)
     os.system("echo $(date +%A-%m-%d-%Y_%H-%M-%S) \"Killed second screen\" >> $BORIKANES_HOME/deploy_log")
 
 os.system("cd $BORIKANES_HOME/node && screen -d -m npm start && cd $BORIKANES_HOME/flask && screen -d -m python3.4 flask_endpoints.py")
