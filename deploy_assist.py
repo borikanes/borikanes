@@ -13,8 +13,8 @@ screen2 = str(second_process.read()).rstrip('\n')
 os.system("echo $(date +%A-%m-%d-%Y_%H-%M-%S) \"Else statement\" >> $BORIKANES_HOME/deploy_log")
 os.system("cd $BORIKANES_HOME && git pull origin master")
 
-screen1_quit = "screen -X -S "+first_process+" quit"
-screen2_quit = "screen -X -S "+second_process+" quit"
+screen1_quit = "screen -X -S "+screen1+" quit"
+screen2_quit = "screen -X -S "+screen2+" quit"
 
 if(first_process):
     os.system(screen1_quit)
