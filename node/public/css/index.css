@@ -50,6 +50,25 @@
   margin-right: auto;
 }
 
+@media screen and (max-width: 750px) {
+    #center-section #name-center-section h1 {
+      font-size: 35px;
+      font-weight: bold;
+      width: 260px;
+      margin-left: 250px;
+      margin-right: auto;
+    }
+
+    #center-section #detail-center-section p {
+      font-size: 20px;
+      font-weight: bold;
+      width: 260px;
+      margin-left: 255px;
+      margin-right: 100px;
+      margin-bottom: 0px;
+    }
+}
+
 @media screen and (max-width: 620px) {
     #center-section #name-center-section h1 {
       font-size: 35px;
