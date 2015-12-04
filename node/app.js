@@ -42,7 +42,7 @@ app.post('/githubwebhook', function (req, res){
   var payload_body = req.body;
   if(payload_body['action'] == 'closed' && payload_body['pull_request']['merged_at'] != null){
     // Run script here
-    exec('sh ../deploy.sh' ,function(err,stdout,stderr){
+    exec('python3.4 ../deploy_assist.py' ,function(err,stdout,stderr){
       if(err !== null){
         console.log('Exec error in deploy: '+err);
       }
