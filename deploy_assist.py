@@ -18,6 +18,11 @@ else:
     screen1_quit = "screen -X -S "+screen1+" quit"
     screen2_quit = "screen -X -S "+screen2+" quit"
 
+    print_first = "echo "+ first_process+" >> $BORIKANES_HOME/deploy_log"
+    print_second = "echo "+ second_process+" >> $BORIKANES_HOME/deploy_log"
+    os.system(print_first)
+    os.system(print_second)
+
     if(first_process):
         os.system(screen1_quit)
         os.system("echo $(date +%A-%m-%d-%Y_%H-%M-%S) \"Killed first screen\" >> $BORIKANES_HOME/deploy_log")
