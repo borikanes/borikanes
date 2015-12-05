@@ -18,10 +18,9 @@ else:
     screen1_quit = "screen -X -S "+screen1+" quit"
     screen2_quit = "screen -X -S "+screen2+" quit"
 
-    print_first = "echo "+ first_process+" >> $BORIKANES_HOME/deploy_log"
-    print_second = "echo "+ second_process+" >> $BORIKANES_HOME/deploy_log"
-    os.system(print_first)
-    os.system(print_second)
+    with open("check.txt", 'w') as f:
+        f.write(first_process+"\n")
+        f.write(second_process+"\n")
 
     if(first_process):
         os.system(screen1_quit)
