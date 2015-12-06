@@ -18,7 +18,7 @@ else:
     screen1_quit = "screen -X -S "+screen1+" quit"
     screen2_quit = "screen -X -S "+screen2+" quit"
     os.system(screen2_quit)
-    os.system(screen1_quit)
+    # os.system(screen1_quit)
     os.system("cd $BORIKANES_HOME && git pull origin master && cd $BORIKANES_HOME/node && screen -d -m npm start && cd $BORIKANES_HOME/flask && screen -d -m python3.4 flask_endpoints.py")
     os.system("echo $(date +%A-%m-%d-%Y_%H-%M-%S) \"Deploy Succesfull!\" >> $BORIKANES_HOME/deploy_log")
     # print_first = "echo "+ screen1+ " >> $BORIKANES_HOME/deploy_log"
