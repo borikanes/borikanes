@@ -23,12 +23,13 @@ else:
     os.system(print_first)
     os.system(print_second)
 
-    if(first_process):
-        os.system(screen1_quit)
-        os.system("echo $(date +%A-%m-%d-%Y_%H-%M-%S) \"Killed first screen\" >> $BORIKANES_HOME/deploy_log")
     if(second_process):
         os.system(screen2_quit)
         os.system("echo $(date +%A-%m-%d-%Y_%H-%M-%S) \"Killed second screen\" >> $BORIKANES_HOME/deploy_log")
+
+    if(first_process):
+        os.system(screen1_quit)
+        os.system("echo $(date +%A-%m-%d-%Y_%H-%M-%S) \"Killed first screen\" >> $BORIKANES_HOME/deploy_log")
 
     os.system("cd $BORIKANES_HOME/node && screen -d -m npm start")
     os.system("cd $BORIKANES_HOME/flask && screen -d -m python3.4 flask_endpoints.py")
