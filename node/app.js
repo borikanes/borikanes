@@ -38,7 +38,6 @@ app.get('/', function(req, res){
 });
 
 app.post('/githubwebhook', function (req, res){
-  res.sendStatus(200);
   var payload_body = req.body;
   if(payload_body['action'] == 'closed' && payload_body['pull_request']['merged_at'] != null){
     // Run script here
@@ -46,6 +45,7 @@ app.post('/githubwebhook', function (req, res){
       if(err !== null){
         console.log('Exec error in deploy: '+err);
       }
+      res.sendStatus(200);
     });
   }
 });
