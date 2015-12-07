@@ -3,6 +3,7 @@ var express = require('express')
  , bodyParser = require('body-parser')
  , fs = require('fs');
  var exec = require('child_process').exec;
+ var execSync = require('exec-sync');
 
 var app = express();
 
@@ -41,12 +42,14 @@ app.post('/githubwebhook', function (req, res){
   var payload_body = req.body;
   if(payload_body['action'] == 'closed' && payload_body['pull_request']['merged_at'] != null){
     // Run script here
-    exec('python3.4 ../deploy_assist.py' ,function(err,stdout,stderr){
-      if(err !== null){
-        console.log('Exec error in deploy: '+err);
-      }
-      res.sendStatus(200);
-    });
+    // exec('python3.4 ../deploy_assist.py' ,function(err,stdout,stderr){
+    //   if(err !== null){
+    //     console.log('Exec error in deploy: '+err);
+    //   }
+    //   res.sendStatus(200);
+    // });
+    execSync('python3.4 ../deploy_assist.py')
+    res.sendStatus(200);
   }
 });
 
