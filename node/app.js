@@ -45,7 +45,10 @@ app.post('/githubwebhook', function (req, res){
       if(err !== null){
         console.log('Exec error in deploy: '+err);
       }
-      res.sendStatus(200);
+      setTimeout(function(){
+        res.sendStatus(200);
+      }, 10000);
+
     });
     // execSync('python3.4 ../deploy_assist.py')
     // res.sendStatus(200);
