@@ -40,6 +40,7 @@ app.get('/', function(req, res){
 app.post('/githubwebhook', function (req, res){
   var payload_body = req.body;
   if(payload_body['action'] == 'closed' && payload_body['pull_request']['merged_at'] != null){
+    console.log("Request came in");
     // Run script here
     exec('python3.4 ../deploy_assist.py' ,function(err,stdout,stderr){
       if(err !== null){
