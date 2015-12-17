@@ -38,6 +38,7 @@ app.get('/', function(req, res){
 });
 
 app.post('/githubwebhook', function (req, res){
+  console.log("Request received");
   var payload_body = req.body;
   if(payload_body['action'] == 'closed' && payload_body['pull_request']['merged_at'] != null){
     console.log("Request came in");
