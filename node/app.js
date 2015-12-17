@@ -47,7 +47,7 @@ app.post('/githubwebhook', function (req, res){
       }
       setTimeout(function(){
         res.sendStatus(200);
-      }, 10000);
+      }, 5000);
 
     });
     // execSync('python3.4 ../deploy_assist.py')
