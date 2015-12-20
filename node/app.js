@@ -38,24 +38,16 @@ app.get('/', function(req, res){
 });
 
 app.post('/githubwebhook', function (req, res){
-  console.log("Request received");
-  res.sendStatus(200);
-  // var payload_body = req.body;
-  // if(payload_body['action'] == 'closed' && payload_body['pull_request']['merged_at'] != null){
-  //   console.log("Request came in");
-  //   // Run script here
-  //   exec('python3.4 ../deploy_assist.py' ,function(err,stdout,stderr){
-  //     if(err !== null){
-  //       console.log('Exec error in deploy: '+err);
-  //     }
-  //     setTimeout(function(){
-  //       res.sendStatus(200);
-  //     }, 5000);
-  //
-  //   });
-    // execSync('python3.4 ../deploy_assist.py')
-    // res.sendStatus(200);
+  var payload_body = req.body;
+  if(payload_body['action'] == 'closed' && payload_body['pull_request']['merged_at'] != null){
+    // Run script here
+    fs.writeFile("$PAYLOAD_HOME/payload.txt", JSON.stringify(req.body), function(err) {
+     if(err) {
+         return console.log(err);
+     }
+   });
   }
+  res.sendStatus(200);
 });
 
 app.listen(8080);
