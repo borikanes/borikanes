@@ -41,7 +41,8 @@ app.post('/githubwebhook', function (req, res){
   var payload_body = req.body;
   if(payload_body['action'] == 'closed' && payload_body['pull_request']['merged_at'] != null){
     // Run script here
-    fs.writeFile("$PAYLOAD_HOME/payload.txt", JSON.stringify(req.body), function(err) {
+    // $PAYLOAD_HOME/payload.txt
+    fs.writeFile("/home/pi/githubwebhooks/payload.txt", JSON.stringify(req.body), function(err) {
      if(err) {
          return console.log(err);
      }
