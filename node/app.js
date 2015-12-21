@@ -44,10 +44,10 @@ app.post('/githubwebhook', function (req, res){
     // $PAYLOAD_HOME/payload.txt
     fs.writeFile("/home/pi/githubwebhooks/payload.txt", JSON.stringify(req.body), function(err) {
      if(err) {
+        res.sendStatus(500);
          return console.log(err);
      }
      res.sendStatus(200);
-     console.log("it should have returned 200");
    });
   }
 });
