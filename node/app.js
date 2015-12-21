@@ -46,9 +46,9 @@ app.post('/githubwebhook', function (req, res){
      if(err) {
          return console.log(err);
      }
+     res.sendStatus(200);
    });
   }
-  res.sendStatus(200);
 });
 
 app.listen(8080);
