@@ -4,7 +4,7 @@
   "author": "One and only -- borikanes",
   "version":"0.0.1",
   "scripts" : {
-    "start" : "node ./app.js",
+    "start" : "nodemon ./app.js",
     "test" : "mocha --recursive"
   },
   "dependencies": {
@@ -14,6 +14,7 @@
     "expect.js":"*",
     "superagent":"1.0.0",
     "mocha": "*",
-    "express-ejs-layouts": "*"
+    "express-ejs-layouts": "*",
+    "nodemon": "*"
   }
 }
