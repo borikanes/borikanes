@@ -10,4 +10,4 @@ Repo for borikanes.me
 
 ## CICD plan
 I completely switched to Travis for CI.
-And used GitHub webhooks, shell scripting and python for my continuous deployment shenanigan
+And used GitHub webhooks, shell scripting and bash shell script for my continuous deployment shenanigan
