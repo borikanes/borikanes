@@ -15,9 +15,9 @@ def get_resume():
 def flask_home():
     return "Flask is running on borikanes.me"
 
-@app.route('/twilio')
+@app.route('/twilio', methods=['POST'])
 def post_twilio():
-
+    
 
 if __name__ == '__main__':
     app.run('0.0.0.0',port=5000,debug=True)
