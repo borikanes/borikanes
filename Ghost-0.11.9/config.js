@@ -10,8 +10,9 @@ config = {
     // ### Production
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
+    //
     production: {
-        url: 'http://my-ghost-blog.com',
+        url: 'http://borikanes.me/blog',
         mail: {},
         database: {
             client: 'sqlite3',
