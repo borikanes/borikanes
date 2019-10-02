@@ -12,7 +12,7 @@ config = {
     // Configure your URL and mail settings here
     //
     production: {
-        url: 'blog.borikanes.me',
+        url: 'http://blog.borikanes.me',
         mail: {},
         database: {
             client: 'sqlite3',
