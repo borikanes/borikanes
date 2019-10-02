@@ -12,7 +12,7 @@ config = {
     // Configure your URL and mail settings here
     //
     production: {
-        url: 'http://borikanes.me/blog',
+        url: 'blog.borikanes.me',
         mail: {},
         database: {
             client: 'sqlite3',
@@ -59,7 +59,7 @@ config = {
         database: {
             client: 'sqlite3',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost-dev.db')
+                filename: path.join(__dirname, '/content/data/ghost.db')
             },
             debug: false
         },
